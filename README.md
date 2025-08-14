@@ -21,13 +21,14 @@ cd mcp-setup
 
 1. MCP 서버 패키지 설치:
 ```bash
-npm install -g @modelcontextprotocol/server-filesystem @modelcontextprotocol/server-memory
+npm install -g @modelcontextprotocol/server-filesystem @modelcontextprotocol/server-memory @modelcontextprotocol/server-github
 ```
 
 2. Claude Code에 MCP 서버 추가:
 ```bash
 claude mcp add filesystem npx @modelcontextprotocol/server-filesystem $HOME
 claude mcp add memory npx @modelcontextprotocol/server-memory
+claude mcp add github npx @modelcontextprotocol/server-github
 ```
 
 ## 설정 확인
@@ -50,6 +51,9 @@ claude
 
 ### Memory MCP
 메모리 기반 데이터 저장소를 제공합니다.
+
+### GitHub MCP
+GitHub API를 통한 저장소, 이슈, PR 관리를 제공합니다.
 
 ## 요구 사항
 

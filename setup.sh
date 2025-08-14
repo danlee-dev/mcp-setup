@@ -7,7 +7,7 @@ echo "Starting MCP Setup for Claude Code..."
 
 # Install MCP server packages globally
 echo "Installing MCP server packages..."
-npm install -g @modelcontextprotocol/server-filesystem @modelcontextprotocol/server-memory
+npm install -g @modelcontextprotocol/server-filesystem @modelcontextprotocol/server-memory @modelcontextprotocol/server-github
 
 # Create Claude Code config directory if it doesn't exist
 echo "Creating configuration directory..."
@@ -21,6 +21,7 @@ cp mcp-settings.json ~/.config/claude-code/
 echo "Configuring Claude Code MCP servers..."
 claude mcp add filesystem npx @modelcontextprotocol/server-filesystem "$HOME"
 claude mcp add memory npx @modelcontextprotocol/server-memory
+claude mcp add github npx @modelcontextprotocol/server-github
 
 # List configured servers
 echo "Setup complete! Here are your configured MCP servers:"
