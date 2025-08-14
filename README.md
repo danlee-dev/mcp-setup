@@ -1,15 +1,12 @@
 # MCP Setup for Claude Code
 
-Model Context Protocol (MCP) 서버를 Claude Code CLI와 연결하기 위한 설정 파일 및 스크립트입니다.
+Configuration files and scripts for connecting Model Context Protocol (MCP) servers to Claude Code CLI.
 
-## 포함된 파일
+## Overview
 
-- `mcp-settings.json`: MCP 서버 설정 파일
-- `setup.sh`: 자동 설치 및 설정 스크립트
+This repository provides a comprehensive setup for MCP servers that enhance Claude Code's capabilities with external integrations including file systems, databases, design tools, and AI services.
 
-## 설치 방법
-
-### 자동 설치
+## Quick Start
 
 ```bash
 git clone https://github.com/danlee-dev/mcp-setup.git
@@ -17,119 +14,113 @@ cd mcp-setup
 ./setup.sh
 ```
 
-### 수동 설치
+## Included Files
 
-1. MCP 서버 패키지 설치:
+- `mcp-settings.json` - MCP server configuration file
+- `setup.sh` - Automated installation script
+- `docs/` - Detailed documentation for each MCP server
+
+## Supported MCP Servers
+
+| Server | Description | Documentation |
+|--------|-------------|---------------|
+| [Filesystem](docs/filesystem.md) | Secure file system operations | File operations, directory management |
+| [Memory](docs/memory.md) | Knowledge graph-based persistent memory | Data storage, knowledge management |
+| [GitHub](docs/github.md) | Repository, issues, and PR management | Git operations, collaboration |
+| [Notion](docs/notion.md) | Workspace integration | Note management, collaboration |
+| [Puppeteer](docs/puppeteer.md) | Web browser automation and scraping | Web automation, testing |
+| [Sequential Thinking](docs/sequential-thinking.md) | Structured problem-solving | Complex reasoning, planning |
+| [Context7](docs/context7.md) | Real-time library documentation | Code documentation, references |
+| [Figma](docs/figma.md) | Design-to-code conversion | Design systems, code generation |
+| [Magic](docs/magic.md) | AI-powered UI component generation | Component creation, prototyping |
+
+## Installation
+
+### Prerequisites
+
+- Node.js and npm
+- Claude Code CLI
+- macOS/Linux (Windows requires WSL)
+
+### Manual Installation
+
+1. Install MCP server packages:
 ```bash
-npm install -g @modelcontextprotocol/server-filesystem @modelcontextprotocol/server-memory @modelcontextprotocol/server-github
+npm install -g @modelcontextprotocol/server-filesystem
+npm install -g @modelcontextprotocol/server-memory
+npm install -g @modelcontextprotocol/server-github
 ```
 
-2. Claude Code에 MCP 서버 추가:
+2. Add servers to Claude Code:
 ```bash
 claude mcp add filesystem npx @modelcontextprotocol/server-filesystem $HOME
 claude mcp add memory npx @modelcontextprotocol/server-memory
 claude mcp add github npx @modelcontextprotocol/server-github
 ```
 
-## 설정 확인
+## Configuration
 
+### Environment Variables
+
+Required environment variables for API-dependent servers:
+
+```bash
+# Notion integration
+export NOTION_API_KEY=your_notion_token_here
+
+# Figma integration
+export FIGMA_ACCESS_TOKEN=figd_your_token_here
+
+# Magic UI generation
+export TWENTY_FIRST_API_KEY=your_magic_api_key_here
+```
+
+### Verification
+
+Check server status:
 ```bash
 claude mcp list
 ```
 
-## 사용 방법
+## Usage
 
-Claude Code CLI 실행 시 MCP 도구들이 자동으로 활성화됩니다:
+Once configured, MCP tools are automatically available in Claude Code:
 ```bash
 claude
 ```
 
-## MCP 서버 목록
+## Documentation
 
-### Filesystem MCP
-홈 디렉토리에 대한 파일 시스템 접근을 제공합니다.
+Each MCP server has detailed documentation in the `docs/` folder:
 
-### Memory MCP
-메모리 기반 데이터 저장소를 제공합니다.
+- **Setup guides** - Step-by-step installation instructions
+- **Configuration** - API keys, environment variables, permissions
+- **Usage examples** - Common use cases and commands
+- **Troubleshooting** - Common issues and solutions
 
-### GitHub MCP
-GitHub API를 통한 저장소, 이슈, PR 관리를 제공합니다.
+## Troubleshooting
 
-### Notion MCP
-Notion 워크스페이스 연동을 제공합니다.
+### Connection Issues
 
-### Puppeteer MCP
-웹 브라우저 자동화 및 스크래핑을 제공합니다.
+1. Verify server status: `claude mcp list`
+2. Check configuration: Review `~/.claude.json`
+3. Restart Claude Code
+4. Verify API keys and permissions
 
-### Sequential Thinking MCP
-구조화된 사고 과정과 단계별 문제 해결을 제공합니다.
+### Common Problems
 
-### Context7 MCP
-최신 라이브러리 문서를 실시간으로 제공합니다.
+- **Server failed to connect**: Check API keys and network connectivity
+- **Permission denied**: Verify file permissions and API scopes
+- **Package not found**: Ensure all dependencies are installed
 
-### Figma MCP (Framelink)
-Figma 디자인을 실제 코드로 변환하는 혁신적인 도구입니다. 디자인 시스템 분석부터 다양한 프레임워크로의 코드 생성, 에셋 관리까지 디자인-투-개발 워크플로우를 완전히 자동화합니다.
+## Contributing
 
-### Magic MCP (21st.dev)
-AI 기반 UI 컴포넌트 생성 도구입니다. v0처럼 자연어 설명만으로 아름답고 모던한 UI 컴포넌트를 즉시 생성할 수 있습니다.
+1. Fork the repository
+2. Create a feature branch
+3. Add your MCP server configuration
+4. Update documentation
+5. Submit a pull request
 
-## 설정 방법
+## License
 
-### Notion 설정
-1. [Notion 통합](https://www.notion.so/profile/integrations)에서 새 통합 생성
-2. 생성된 토큰을 환경 변수로 설정:
-   ```bash
-   export NOTION_API_KEY=your_notion_token_here
-   ```
-3. 접근하려는 Notion 페이지에 통합 권한 부여
-
-### Figma 설정
-1. **Figma Personal Access Token 생성**
-   - Figma 로그인 → Settings → Personal Access Tokens 이동
-   - Generate new token 클릭
-   - 토큰 이름 입력 (예: "Claude MCP")
-   - 생성된 토큰 복사 ⚠️ 한 번만 표시됩니다!
-
-2. **환경 변수 설정**:
-   ```bash
-   export FIGMA_ACCESS_TOKEN=figd_your_token_here
-   ```
-
-3. **주요 기능**:
-   - 🎨 다중 프레임워크 지원 (React, Vue, Angular, Svelte, HTML/CSS)
-   - 📊 디자인 시스템 분석 및 스타일 토큰 추출
-   - 🖼️ 이미지/아이콘 자동 최적화 및 다운로드
-   - 📱 반응형 디자인 코드 생성
-
-### Magic 설정
-1. **21st.dev API 키 발급**
-   - [21st.dev Magic Console](https://21st.dev/magic/console) 방문
-   - API 키 생성 및 복사
-
-2. **환경 변수 설정**:
-   ```bash
-   export TWENTY_FIRST_API_KEY=your_magic_api_key_here
-   ```
-
-3. **주요 기능**:
-   - ✨ 자연어로 UI 컴포넌트 생성
-   - 🎨 React, Vue, Angular, Svelte 지원
-   - 💎 프로덕션 준비된 고품질 코드
-   - 🎯 빠른 프로토타이핑 및 MVP 개발
-
-## 요구 사항
-
-- Node.js 및 npm
-- Claude Code CLI
-- macOS/Linux (Windows는 WSL 필요)
-
-## 문제 해결
-
-MCP 서버가 연결되지 않는 경우:
-1. `claude mcp list`로 서버 상태 확인
-2. `~/.claude.json` 파일에서 MCP 설정 확인
-3. Claude Code 재시작
-
-## 라이선스
-
-MIT
+MIT License - see [LICENSE](LICENSE) file for details.
