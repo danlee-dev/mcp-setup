@@ -61,6 +61,15 @@ Notion 워크스페이스 연동을 제공합니다.
 ### Puppeteer MCP
 웹 브라우저 자동화 및 스크래핑을 제공합니다.
 
+### Sequential Thinking MCP
+구조화된 사고 과정과 단계별 문제 해결을 제공합니다.
+
+### Context7 MCP
+최신 라이브러리 문서를 실시간으로 제공합니다.
+
+### Figma MCP
+Figma 디자인을 코드로 변환하는 기능을 제공합니다.
+
 ## Notion 설정 방법
 
 1. [Notion 통합](https://www.notion.so/profile/integrations)에서 새 통합 생성
