@@ -67,8 +67,8 @@ Notion 워크스페이스 연동을 제공합니다.
 ### Context7 MCP
 최신 라이브러리 문서를 실시간으로 제공합니다.
 
-### Figma MCP
-Figma 디자인을 코드로 변환하는 기능을 제공합니다.
+### Figma MCP (Framelink)
+Figma 디자인을 실제 코드로 변환하는 혁신적인 도구입니다. 디자인 시스템 분석부터 다양한 프레임워크로의 코드 생성, 에셋 관리까지 디자인-투-개발 워크플로우를 완전히 자동화합니다.
 
 ## 설정 방법
 
@@ -81,11 +81,22 @@ Figma 디자인을 코드로 변환하는 기능을 제공합니다.
 3. 접근하려는 Notion 페이지에 통합 권한 부여
 
 ### Figma 설정
-1. [Figma Personal Access Token](https://www.figma.com/developers/api#access-tokens) 생성
-2. API 토큰을 환경 변수로 설정:
+1. **Figma Personal Access Token 생성**
+   - Figma 로그인 → Settings → Personal Access Tokens 이동
+   - Generate new token 클릭
+   - 토큰 이름 입력 (예: "Claude MCP")
+   - 생성된 토큰 복사 ⚠️ 한 번만 표시됩니다!
+
+2. **환경 변수 설정**:
    ```bash
-   export FIGMA_ACCESS_TOKEN=your_figma_token_here
+   export FIGMA_ACCESS_TOKEN=figd_your_token_here
    ```
+
+3. **주요 기능**:
+   - 🎨 다중 프레임워크 지원 (React, Vue, Angular, Svelte, HTML/CSS)
+   - 📊 디자인 시스템 분석 및 스타일 토큰 추출
+   - 🖼️ 이미지/아이콘 자동 최적화 및 다운로드
+   - 📱 반응형 디자인 코드 생성
 
 ## 요구 사항
 
