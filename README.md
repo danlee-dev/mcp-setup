@@ -70,6 +70,9 @@ Notion 워크스페이스 연동을 제공합니다.
 ### Figma MCP (Framelink)
 Figma 디자인을 실제 코드로 변환하는 혁신적인 도구입니다. 디자인 시스템 분석부터 다양한 프레임워크로의 코드 생성, 에셋 관리까지 디자인-투-개발 워크플로우를 완전히 자동화합니다.
 
+### Magic MCP (21st.dev)
+AI 기반 UI 컴포넌트 생성 도구입니다. v0처럼 자연어 설명만으로 아름답고 모던한 UI 컴포넌트를 즉시 생성할 수 있습니다.
+
 ## 설정 방법
 
 ### Notion 설정
@@ -97,6 +100,22 @@ Figma 디자인을 실제 코드로 변환하는 혁신적인 도구입니다. �
    - 📊 디자인 시스템 분석 및 스타일 토큰 추출
    - 🖼️ 이미지/아이콘 자동 최적화 및 다운로드
    - 📱 반응형 디자인 코드 생성
+
+### Magic 설정
+1. **21st.dev API 키 발급**
+   - [21st.dev Magic Console](https://21st.dev/magic/console) 방문
+   - API 키 생성 및 복사
+
+2. **환경 변수 설정**:
+   ```bash
+   export TWENTY_FIRST_API_KEY=your_magic_api_key_here
+   ```
+
+3. **주요 기능**:
+   - ✨ 자연어로 UI 컴포넌트 생성
+   - 🎨 React, Vue, Angular, Svelte 지원
+   - 💎 프로덕션 준비된 고품질 코드
+   - 🎯 빠른 프로토타이핑 및 MVP 개발
 
 ## 요구 사항
 
