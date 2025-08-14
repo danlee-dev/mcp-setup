@@ -58,14 +58,21 @@ GitHub API를 통한 저장소, 이슈, PR 관리를 제공합니다.
 ### Notion MCP
 Notion 워크스페이스 연동을 제공합니다.
 
-## Notion 설정 방법
+### Puppeteer MCP
+웹 브라우저 자동화 및 스크래핑을 제공합니다.
 
+## 설정 방법
+
+### Notion 설정
 1. [Notion 통합](https://www.notion.so/profile/integrations)에서 새 통합 생성
 2. 생성된 토큰을 환경 변수로 설정:
    ```bash
    export NOTION_API_KEY=your_notion_token_here
    ```
 3. 접근하려는 Notion 페이지에 통합 권한 부여
+
+### Puppeteer 설정
+Docker가 설치되어 있어야 합니다. (브라우저 자동화를 위해 필요)
 
 ## 요구 사항
 
