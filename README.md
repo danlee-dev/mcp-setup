@@ -70,14 +70,22 @@ Notion 워크스페이스 연동을 제공합니다.
 ### Figma MCP
 Figma 디자인을 코드로 변환하는 기능을 제공합니다.
 
-## Notion 설정 방법
+## 설정 방법
 
+### Notion 설정
 1. [Notion 통합](https://www.notion.so/profile/integrations)에서 새 통합 생성
 2. 생성된 토큰을 환경 변수로 설정:
    ```bash
    export NOTION_API_KEY=your_notion_token_here
    ```
 3. 접근하려는 Notion 페이지에 통합 권한 부여
+
+### Figma 설정
+1. [Figma Personal Access Token](https://www.figma.com/developers/api#access-tokens) 생성
+2. API 토큰을 환경 변수로 설정:
+   ```bash
+   export FIGMA_ACCESS_TOKEN=your_figma_token_here
+   ```
 
 ## 요구 사항
 
