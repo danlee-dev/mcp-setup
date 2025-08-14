@@ -31,6 +31,16 @@
       "env": {
         "NOTION_API_KEY": "${NOTION_API_KEY}"
       }
+    },
+    "image-vision": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@nazruden/mcp-openvision"
+      ],
+      "env": {
+        "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+      }
     }
   }
 }
