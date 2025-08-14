@@ -61,6 +61,9 @@ Notion 워크스페이스 연동을 제공합니다.
 ### Puppeteer MCP
 웹 브라우저 자동화 및 스크래핑을 제공합니다.
 
+### Brave Search MCP
+실시간 웹 검색 기능을 제공합니다.
+
 ## 설정 방법
 
 ### Notion 설정
@@ -73,6 +76,13 @@ Notion 워크스페이스 연동을 제공합니다.
 
 ### Puppeteer 설정
 Docker가 설치되어 있어야 합니다. (브라우저 자동화를 위해 필요)
+
+### Brave Search 설정
+1. [Brave Search API](https://api.search.brave.com/)에서 API 키 생성
+2. API 키를 환경 변수로 설정:
+   ```bash
+   export BRAVE_API_KEY=your_brave_api_key_here
+   ```
 
 ## 요구 사항
 
